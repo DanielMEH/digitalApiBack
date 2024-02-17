@@ -1,0 +1,33 @@
+{
+    "Name": "Catalogs Microservices",
+    "Config_data": {
+        "port": 3050,
+        "path": "catalogs",
+        "schema": "catalogs"
+    },
+    "url_schema_db": {
+        "protocolo": "http://",
+        "localhost": "localhost",
+        "port": "3023"
+    },
+    "defaut_schema": "ecommers",
+    "log": {
+        "FileName": "log/msg.log",
+        "console_level": "debug"
+    },
+
+    "url_servers":{
+        "Url_test": "https://jsonplaceholder.typicode.com/posts",
+        "Url_Db": "http://localhost:3022"
+    },
+    "db": {
+        "Dbcatalogs": "catalogs"
+    } ,
+    "requestBodyLimit": "50mb",
+    "requestParamLimit": "50mb",
+    "requestTimeout": 30000,
+    "responseTimeout": 30000,
+    "requestSizeLimit": "50mb",
+    "responseSizeLimit": "50mb",
+    "requestHeaderLimit": "50mb"
+}
