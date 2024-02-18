@@ -5,7 +5,7 @@ import jsonapp from "../data/app.json"
 import { Logger } from "../utils/logs"
 import { routerInitialize } from "../routers/router"
 
-export class App {
+export class Application {
     public AppServer: express.Application
     constructor() {
         this.AppServer = express()

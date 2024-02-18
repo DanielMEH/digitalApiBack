@@ -1,3 +1,3 @@
-import { App } from "./app/App";
+import { Application } from "./app/app";
 
-new App().AppServer
+new Application().AppServer
