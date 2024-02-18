@@ -26,6 +26,7 @@ export class controllers  {
     }
 
     public async postRegisteruser(req: Request, res: Response) {
+        console.log("postRegisteruser")
 
         try {
             let {email, password} = req.body

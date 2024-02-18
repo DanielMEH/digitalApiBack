@@ -25,14 +25,14 @@ export class Application {
         this.AppServer.use(morgan("dev"))
     }
     private routes(): void {
-        this.AppServer.use("/",  routerInitialize.postLogin())
-        this.AppServer.use("/",  routerInitialize.postRegister())
-        this.AppServer.use("/",  routerInitialize.getProfile())
-        this.AppServer.use("/",  routerInitialize.putProfile())
-        this.AppServer.use("/",  routerInitialize.deleteProfile())
-        this.AppServer.use("/",  (req, res) => {
-            res.status(404).json({error: "Not found"})
-        })
+        this.AppServer.use(routerInitialize.postLogin())
+        this.AppServer.use(routerInitialize.postRegister())
+        this.AppServer.use(routerInitialize.getProfile())
+        this.AppServer.use(routerInitialize.putProfile())
+        this.AppServer.use(routerInitialize.deleteProfile())
+        // this.AppServer.use((req, res) => {
+        //     res.status(404).json({error: "Not found"})
+        // })
     }
 }
 
