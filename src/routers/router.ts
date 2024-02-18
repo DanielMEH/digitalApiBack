@@ -4,7 +4,7 @@ import jsonapp from "../data/app.json"
 import { authorizeJsonWebToken } from "../middleware/authorizationacessToken";
 const router = Router()
 
-let path = `/${jsonapp.Config_data.schema}/${jsonapp.Config_data.path}` 
+let path = `${jsonapp.Config_data.schema}/${jsonapp.Config_data.path}` 
 class RouterInitialize extends controllers {
 
     public postLogin() {
