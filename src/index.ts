@@ -3,7 +3,7 @@ import morgan from "morgan"
 import cors from "cors"
 import jsonapp from "./data/app.json"
 import { Logger } from "./utils/logs"
-import { routerInitialize } from "./routers/router"
+import { RouterInitialize } from "./routers/router"
 
 export class Application {
     public AppServer: express.Application
@@ -24,15 +24,9 @@ export class Application {
         this.AppServer.use(cors())
         this.AppServer.use(morgan("dev"))
     }
-    private routes(): void {
-        this.AppServer.use(routerInitialize.postLogin())
-        this.AppServer.use(routerInitialize.postRegister())
-        this.AppServer.use(routerInitialize.getProfile())
-        this.AppServer.use(routerInitialize.putProfile())
-        this.AppServer.use(routerInitialize.deleteProfile())
-        this.AppServer.use("/registerapp",(req, res) => {
-            res.status(200).json({message: "Welcome to CoinPouch"})
-        })
+    private async routes():Promise<express.Application> {
+        this.AppServer.use(new RouterInitialize().initializeRoutes());
+        return this.AppServer;
     }
 }
 
